@@ -1,0 +1,5 @@
+{
+  "name": "Superhero Portrait Generator",
+  "description": "Upload a portrait, Select your Universe, Save the Universe",
+  "requestFramePermissions": []
+}

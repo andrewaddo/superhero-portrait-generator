@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Portrait Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Superhero Portrait Generator</h1>
+            <p>Upload your portrait, choose a universe, and become a hero!</p>
+        </header>
+        
+        <section class="controls">
+            <div class="upload-section">
+                <label for="portrait-upload" class="upload-label">1. Upload Portrait</label>
+                <input type="file" id="portrait-upload" accept="image/*" hidden>
+                 <div id="image-preview-container" class="image-preview-box" aria-live="polite">
+                    <span>Your photo will appear here</span>
+                </div>
+            </div>
+
+            <div class="theme-section">
+                <h2>2. Choose Universe</h2>
+                <div class="theme-options">
+                    <input type="radio" id="theme-marvel" name="theme" value="Marvel">
+                    <label for="theme-marvel">Marvel</label>
+                    <input type="radio" id="theme-dc" name="theme" value="DC">
+                    <label for="theme-dc">DC</label>
+                </div>
+            </div>
+
+            <button id="generate-btn" disabled>Generate My Superhero</button>
+        </section>
+
+        <section id="results-section" class="results" aria-live="polite">
+            <div id="loader" class="loader-container" hidden>
+                <div class="loader"></div>
+                <p>Generating your superhero... This may take a moment.</p>
+            </div>
+            <div id="image-gallery">
+                <!-- Generated image will appear here -->
+            </div>
+        </section>
+    </main>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
